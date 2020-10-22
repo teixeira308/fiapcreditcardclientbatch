@@ -19,7 +19,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
-
+import java.util.Date;
 import javax.sql.DataSource;
 
 @SpringBootApplication
@@ -56,7 +56,7 @@ public class ClientBatchApplication {
 	public JdbcBatchItemWriter<Aluno> itemWriter(DataSource dataSource){
 		return new JdbcBatchItemWriterBuilder<Aluno>()
 				.dataSource(dataSource)
-				.sql("insert into TB_ALUNOS (nome, nregistro) values (:nome, :nregistro)")
+				.sql("insert into TB_ALUNO (nome, numero_cartao,ativo,data_atualizacao,data_criacao,saldo) values (:nome, :nregistro, true, null,CURRENT_TIMESTAMP(),5000)")
 				.beanMapped()
 				.build();
 	}

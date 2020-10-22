@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="clientesdb">
+<dataSource name="fiapcreditcarddatabase">
   <database-model serializer="dbm" dbms="H2" family-id="H2" format-version="4.19">
     <root id="1">
       <ServerVersion>1.4.200</ServerVersion>
     </root>
-    <database id="2" parent="1" name="CLIENTESDB">
+    <database id="2" parent="1" name="FIAPCREDITCARDDATABASE">
       <Current>1</Current>
     </database>
     <schema id="3" parent="2" name="INFORMATION_SCHEMA"/>
@@ -188,26 +188,26 @@
       <ObjectId>36</ObjectId>
       <CacheSize>32</CacheSize>
     </sequence>
-    <sequence id="167" parent="4" name="SYSTEM_SEQUENCE_3761AFEE_6D1B_4758_82C3_3DBB5BC67B4D">
-      <ObjectId>14</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <CacheSize>32</CacheSize>
-      <AutoCreated>1</AutoCreated>
-    </sequence>
-    <sequence id="168" parent="4" name="SYSTEM_SEQUENCE_9F506BC7_9FF8_4750_94EC_C3DB31E67E8B">
+    <sequence id="167" parent="4" name="SYSTEM_SEQUENCE_2CFDE292_29EE_4CD3_9C50_942C52EE0EA5">
       <ObjectId>4</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="169" parent="4" name="SYSTEM_SEQUENCE_E22A86D1_7455_4643_8870_A8D030E262D8">
-      <ObjectId>8</ObjectId>
+    <sequence id="168" parent="4" name="SYSTEM_SEQUENCE_32B25FA4_854B_42B2_80B0_E9ACFC9B2B4C">
+      <ObjectId>23</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="170" parent="4" name="SYSTEM_SEQUENCE_EE053917_D39B_4343_AEF5_63DB78112227">
-      <ObjectId>23</ObjectId>
+    <sequence id="169" parent="4" name="SYSTEM_SEQUENCE_CAC8CA84_4FA7_40C1_AAA3_ACEC8C69A814">
+      <ObjectId>14</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CacheSize>32</CacheSize>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <sequence id="170" parent="4" name="SYSTEM_SEQUENCE_CFD3A938_C0CF_4F7D_BA0D_7CD01E334B18">
+      <ObjectId>8</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
@@ -230,7 +230,7 @@
     <table id="176" parent="4" name="BATCH_STEP_EXECUTION_CONTEXT">
       <ObjectId>28</ObjectId>
     </table>
-    <table id="177" parent="4" name="TB_ALUNOS">
+    <table id="177" parent="4" name="TB_ALUNO">
       <ObjectId>3</ObjectId>
     </table>
     <column id="178" parent="171" name="JOB_EXECUTION_ID">
@@ -588,29 +588,44 @@ JOB_KEY</ColNames>
     </foreign-key>
     <column id="245" parent="177" name="ID">
       <Position>1</Position>
-      <DataType>LONG|0s</DataType>
+      <DataType>BIGINT|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="246" parent="177" name="NOME">
       <Position>2</Position>
-      <DataType>VARCHAR(100)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="247" parent="177" name="NREGISTRO">
+    <column id="247" parent="177" name="NUMERO_CARTAO">
       <Position>3</Position>
-      <DataType>VARCHAR(11)|0s</DataType>
+      <DataType>VARCHAR(255)|0s</DataType>
+    </column>
+    <column id="248" parent="177" name="ATIVO">
+      <Position>4</Position>
+      <DataType>BOOLEAN|0s</DataType>
+    </column>
+    <column id="249" parent="177" name="DATA_ATUALIZACAO">
+      <Position>5</Position>
+      <DataType>TIMESTAMP|0s</DataType>
+    </column>
+    <column id="250" parent="177" name="DATA_CRIACAO">
+      <Position>6</Position>
+      <DataType>TIMESTAMP|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="248" parent="177" name="PRIMARY_KEY_8">
+    <column id="251" parent="177" name="SALDO">
+      <Position>7</Position>
+      <DataType>DECIMAL(19,2)|0s</DataType>
+    </column>
+    <index id="252" parent="177" name="PRIMARY_KEY_5">
       <ObjectId>5</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>73</SourceTextLength>
+      <SourceTextLength>72</SourceTextLength>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <key id="249" parent="177" name="CONSTRAINT_8">
+    <key id="253" parent="177" name="CONSTRAINT_5">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>

@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:~\clientesdb;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:~\fiapcreditcarddatabase;DB_CLOSE_ON_EXIT=FALSE
     username: fiap
     password: fiap
   batch:
